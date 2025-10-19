@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SALAV</title>
+  <link rel="stylesheet" href="../../plantilla.css">
+  <link rel="icon" type="image/x-icon" href="../../img/favicon.png">
+  <link rel="stylesheet" href="estudiosProceso.css">
+
+</head>
+
+<body>
+  <div id="preloader">
+    <img width="150px" src="../../img/Logo.png" alt="Cargando..." />
+  </div>
+  <plantilla-salav>
+    <div class="slot-header" slot="header">
+      <a href="../inicioFreelancer.html">
+                <img class="logo-header" style="width: 150px;" src="../../img/SiluetaClara.png" alt="">
+      </a>
+      <nav id="menu">
+        <a href="../pendientes/estudiosPendientes.html">Estudios pendientes</a>
+        <a href="estudiosProceso.html">Estudios en proceso</a>
+        <!-- Botón Logout con SVG -->
+        <button class="logout-btn" id="btnLogout" aria-label="Cerrar sesión" title="Cerrar sesión">
+          <!-- SVG de logout (salir) -->
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <!-- Flecha de salida -->
+            <path d="M16 17l5-5-5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M21 12H9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <!-- Marco/puerta -->
+            <path d="M13 21H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" />
+          </svg>
+        </button>
+      </nav>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div slot="main">
+
+      <h1>Estudios solicitados</h1>
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Buscar por nombre...">
+      </div>
+      <div class="container">
+        <table>
+          <tbody></tbody>
+        </table>
+
+
+      </div>
+
+      <!-- Paginación -->
+      <div class="pagination">
+        <button id="prevPage" class="page-btn">«</button>
+
+        <!-- Se mostrará solo en escritorio -->
+        <div id="pageJump" class="page-jump">
+          Página <input type="number" id="pageInput" min="1"> de <span id="totalPages">1</span>
+          <button id="goPage">Ir</button>
+        </div>
+
+        <!-- Se mostrará en todos los dispositivos -->
+        <span id="pageInfo" class="page-info">Página 1 de 1</span>
+
+        <button id="nextPage" class="page-btn">»</button>
+      </div>
+    </div>
+
+  </plantilla-salav>
+
+  <!-- Modal personalizado -->
+  <div id="modalConfirm" class="modal-overlay" style="display:none;">
+    <div class="modal-box">
+      <p id="modalMessage">¿Deseas finalizar la tarea?</p>
+      <div class="modal-actions">
+        <button id="btnCancelar" class="btn cancelar">Cancelar</button>
+        <button id="btnAceptar" class="btn aceptar">Finalizar</button>
+      </div>
+    </div>
+  </div>
+  <div id="modalAlert" class="modal">
+    <div class="modal-contenido" id="modal-contenido">
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="../../config.js"></script>
+  <script src="../../utilities.js"></script>
+  <script src="estudiosProceso.js"></script>
+
+  <script src="../../plantilla.js"></script>
+</body>
+
+</html>

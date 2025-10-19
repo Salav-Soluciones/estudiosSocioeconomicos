@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SALAV</title>
+    <link rel="icon" type="image/x-icon" href="../../img/favicon.png">
+    <link rel="stylesheet" href="../../plantilla.css">
+    <link rel="stylesheet" href="listarUsuarios.css">
+</head>
+
+<body>
+    <div id="preloader">
+        <img width="150px" src="../../img/Logo.png" alt="Cargando..." />
+    </div>
+    <plantilla-salav>
+        <div class="slot-header" slot="header">
+            <a href="../inicioAdmin.html">
+                <img class="logo-header" style="width: 150px;" src="../../img/SiluetaClara.png" alt="">
+            </a>
+            <nav id="menu">
+                <div class="menu-item">
+                    <a href="#">Usuarios ▾</a>
+                    <div class="submenu">
+                        <a href="#">Listar usuarios</a>
+                        <a href="registerUsuario.html">Registrar usuario</a>
+                    </div>
+                </div>
+                <a href="../estudios/estudiosPendientes.html">Estudios pendientes</a>
+                <a href="../estudios/estudiosProceso.html">Estudios en proceso</a>
+                <!-- Botón Logout con SVG -->
+                <button class="logout-btn" id="btnLogout" aria-label="Cerrar sesión" title="Cerrar sesión">
+                    <!-- SVG de logout (salir) -->
+                    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                        <!-- Flecha de salida -->
+                        <path d="M16 17l5-5-5-5" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M21 12H9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <!-- Marco/puerta -->
+                        <path d="M13 21H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </button>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div slot="main">
+            <div class="container">
+                <h1>Listado de Usuarios</h1>
+                <div class="search-container">
+                    <input type="text" id="searchInput" autocomplete="off" placeholder="Buscar por nombre...">
+                </div>
+                <!-- Tabla -->
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Teléfono</th>
+                                <th>Dirección</th>
+                                <th>Correo</th>
+                                <th>Rol</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="userTable"></tbody>
+                    </table>
+
+                </div>
+                <!-- Paginación -->
+                <div class="pagination">
+                    <button id="prevPage" class="page-btn">«</button>
+
+                    <!-- Se mostrará solo en escritorio -->
+                    <div id="pageJump" class="page-jump">
+                        Página <input type="number" id="pageInput" min="1"> de <span id="totalPages">1</span>
+                        <button id="goPage">Ir</button>
+                    </div>
+
+                    <!-- Se mostrará en todos los dispositivos -->
+                    <span id="pageInfo" class="page-info">Página 1 de</span>
+
+                    <button id="nextPage" class="page-btn">»</button>
+                </div>
+
+            </div>
+        </div>
+    </plantilla-salav>
+    <!-- Modal personalizado -->
+    <div id="modalAlert" class="modal">
+        <div class="modal-contenido" id="modal-contenido">
+        </div>
+    </div>
+    <!-- Modal de confirmación -->
+    <div id="modalConfirmar" class="modal">
+        <div class="modal-contenido">
+            <h3 id="modalMensaje"></h3>
+            <div class="acciones">
+                <button id="btnCancelar">Cancelar</button>
+                <button id="btnEliminar">Eliminar</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../../config.js"></script>
+    <script src="../../utilities.js"></script>
+    <script src="listarUsuarios.js"></script>
+    <script src="../../plantilla.js"></script>
+</body>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SALAV</title>
+    <link rel="stylesheet" href="../../plantilla.css">
+    <link rel="icon" type="image/x-icon" href="../../img/favicon.png">
+
+    <link rel="stylesheet" href="nuevaSolicitud.css">
+
+</head>
+
+<body>
+    <div id="preloader">
+        <img width="150px" src="../../img/Logo.png" alt="Cargando..." />
+    </div>
+    <plantilla-salav>
+        <div class="slot-header" slot="header">
+             <a href="../inicioEmpresa.html">
+                <img class="logo-header" style="width: 150px;" src="../../img/SiluetaClara.png" alt="">
+        </a>
+            <nav id="menu">
+                <!-- <div class="menu-item">
+                <a href="#">Usuarios ▾</a>
+                <div class="submenu">
+                    <a href="listar-usuarios.html">Listar usuarios</a>
+                    <a href="registrar-usuario.html">Registrar usuario</a>
+                </div>
+            </div> -->
+                <a href="nuevaSolicitud.html">Nueva Solicitud</a>
+                <a href="../estudios/estudiosList.html">Estudios socioeconomicos</a>
+                <!-- <a href="#">Configuración</a> -->
+                <!-- Botón Logout con SVG -->
+                <button class="logout-btn" id="btnLogout" aria-label="Cerrar sesión" title="Cerrar sesión">
+                    <!-- SVG de logout (salir) -->
+                    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                        <!-- Flecha de salida -->
+                        <path d="M16 17l5-5-5-5" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M21 12H9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <!-- Marco/puerta -->
+                        <path d="M13 21H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </button>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div slot="main">
+            <h1>Solicitud de Estudio</h1>
+
+            <div class="form-container">
+                <form class="form">
+                    <label for="nombres">Nombre del candidato</label>
+                    <div class="nombre">
+                        <input id="nombres" type="text" placeholder="Nombre del candidato">
+                        <input id="apellidoPaterno" type="text" placeholder="Apellido paterno">
+                        <input id="apellidoMaterno" type="text" placeholder="Apellido materno">
+                    </div>
+
+                    <label for="estado">Dirección</label>
+                    <div class="direccion">
+                        <input id="estado" type="text" placeholder="Estado">
+                        <input id="municipio" type="text" placeholder="Municipio">
+                        <input id="colonia" type="text" placeholder="Colonia">
+                        <input id="direccionCompleta" type="text" placeholder="Completar dirección">
+                    </div>
+
+                    <label for="telefono">WhatsApp / Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Ej: 555 123 4567">
+
+                    <label for="cv">Currículum Vitae</label>
+                    <input type="file" id="cv" name="cv">
+
+                    <button type="submit">Enviar solicitud</button>
+                </form>
+            </div>
+        </div>
+
+    </plantilla-salav>
+    <div id="modalAlert" class="modal">
+        <div class="modal-contenido" id="modal-contenido">
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="nuevaSolicitud.js"></script>
+    <script src="../../config.js"></script>
+    <script src="../../utilities.js"></script>
+    <script src="../../plantilla.js"></script>
+</body>
+
+</html>

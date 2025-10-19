@@ -1,0 +1,29 @@
+
+.imagen-inicio {
+  width: 400px;
+  height: 550px;
+  max-width: 600px;
+  margin: 10px auto;
+  display: block;
+}
+
+ h1 {
+  color: #4b2363;
+  text-align: center;
+}
+
+p {
+  color: #4b2363;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+ @media (max-width: 600px) {
+  .imagen-inicio {
+    width: 300px;
+    height: 400px;
+    max-width: 600px;
+    margin: 10px auto;
+    display: block;
+  }
+}

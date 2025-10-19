@@ -1,0 +1,154 @@
+/* ====== TÍTULO ====== */
+h1 {
+  color: #4b2363;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ====== CONTENEDOR ====== */
+.container {
+    background-color: #cfadf97f;
+    padding: 20px;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+/* ====== LABELS ====== */
+#userForm label {
+    display: block;
+    margin: 15px 0 6px;
+    font-weight: 500;
+    color: #4b2363;
+    font-size: 15px;
+}
+
+/* ====== INPUTS Y SELECT ====== */
+#userForm input,
+#userForm select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 15px;
+    background-color: #fff;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.08);
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+}
+
+/* Hover y Focus */
+#userForm input:hover,
+#userForm select:hover {
+    border-color: #9F38B8;
+}
+
+#userForm input:focus,
+#userForm select:focus {
+    border-color: #D9358C;
+    box-shadow: 0 0 6px rgba(217, 53, 140, 0.4);
+    outline: none;
+}
+
+/* ====== SECCIONES EN GRID ====== */
+
+.companyName,
+.contacto,
+.direccion,
+.acceso {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.nombre {
+    display: grid;
+    grid-template-columns: 1fr; /* ✅ 1 columna en móvil */
+    gap: 15px;
+    margin-bottom: 15px;
+}
+/* ====== BOTÓN ====== */
+#userForm button {
+    width: 40%;
+    padding: 14px;
+    background: linear-gradient(90deg, #9F38B8 0%, #D9358C 100%);
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    display: block;
+    margin: 20px auto 0;
+}
+
+#userForm button:hover {
+    background: linear-gradient(90deg, #8a2ca0 0%, #c72e7c 100%);
+    transform: translateY(-1px);
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 900px) {
+    .nombre,
+    .contacto,
+    .direccion,
+    .acceso {
+        grid-template-columns: 1fr; /* ✅ 1 columna en móvil */
+    }
+
+    #userForm button {
+        width: 100%; /* Botón ancho completo */
+    }
+}
+
+/* Puedes ponerlo en registerUsuario.css o en un <style> en el head */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff; /* color de fondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.3s ease;
+}
+
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+ /* 🔲 Fondo del modal */
+ .modal {
+     display: none;
+     /* oculto por defecto */
+     position: fixed;
+     z-index: 9999;
+     left: 0;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     background: rgba(0, 0, 0, 0.5);
+     justify-content: center;
+     align-items: center;
+ }
+
+ /* 📦 Caja del modal */
+ .modal-contenido {
+     background: #fff;
+     padding: 20px;
+     border-radius: 12px;
+     width: 50%;
+     max-width: 90%;
+     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+     text-align: center;
+ }
